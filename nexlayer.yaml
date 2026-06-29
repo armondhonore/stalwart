@@ -1,0 +1,14 @@
+application:
+  name: stalwart
+  pods:
+  - name: app
+    image: stalwartlabs/mail-server:latest
+    path: /
+    servicePorts:
+    - 8080
+    vars:
+      TZ: "UTC"
+    volumes:
+    - name: stalwart-data
+      mountPath: /opt/stalwart-mail
+      size: 10Gi
