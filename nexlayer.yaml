@@ -2,7 +2,7 @@ application:
   name: stalwart
   pods:
   - name: app
-    image: stalwartlabs/mail-server:latest
+    image: ghcr.io/stalwartlabs/mail-server:latest
     path: /
     servicePorts:
     - 8080
@@ -10,5 +10,5 @@ application:
       TZ: "UTC"
     volumes:
     - name: stalwart-data
-      mountPath: /opt/stalwart-mail
+      mountPath: /stalwart/data
       size: 10Gi
