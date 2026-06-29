@@ -1,1 +1,1 @@
-FROM stalwartlabs/mail-server:latest
+FROM ghcr.io/stalwartlabs/mail-server:latest
