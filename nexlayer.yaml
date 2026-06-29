@@ -2,13 +2,17 @@ application:
   name: stalwart
   pods:
   - name: app
-    image: ghcr.io/stalwartlabs/mail-server:latest
-    path: /
+    image: ghcr.io/stalwartlabs/stalwart:v0.16.11
+    path: /login
     servicePorts:
     - 8080
     vars:
       TZ: "UTC"
+      STALWART_RECOVERY_ADMIN: "admin:stalwartadmin"
     volumes:
+    - name: stalwart-config
+      mountPath: /etc/stalwart
+      size: 2Gi
     - name: stalwart-data
-      mountPath: /stalwart/data
+      mountPath: /var/lib/stalwart
       size: 10Gi
